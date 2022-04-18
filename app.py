@@ -10,11 +10,11 @@ app = Flask(__name__)
 
 @app.route('/') # the webpage link/extension
 def main():
-    return render_template('home.html') # call to the html template named "home.html"
+    return render_template('/users/hussein/source/movie/templates/home.html') # call to the html template named "home.html"
 
 @app.route('/about')
 def about():
-	return render_template('about.html')
+	return render_template('/users/hussein/source/movie/templates/about.html')
 
 
 @app.route('/similarByName',methods=['POST'])
@@ -36,7 +36,7 @@ def similar_by_name():
 			}
 			movie_list.append(info)
 			n+=1
-	return render_template("similar.html",
+	return render_template("/users/hussein/source/movie/templates/similar.html",
 						   title='Name',
 						   name=query,
 						   topmovies=movie_list)
@@ -63,7 +63,7 @@ def similar_by_content():
 			}
 			movie_list.append(info)
 
-		return render_template("similar.html",
+		return render_template("/users/hussein/source/movie/templates/similar.html",
 						   title='Content',
 						   name=query,
 						   topmovies=movie_list)
@@ -78,7 +78,7 @@ def random():
 		R = randint(0,len(df)-1)
 		rand_movie = df.iloc[R]
 
-	return render_template('ratings.html',
+	return render_template('/users/hussein/source/movie/templates/ratings.html',
 			name = rand_movie['original_title'],
 			genre = rand_movie['genres'],
 			ratings = rand_movie['popularity'])
