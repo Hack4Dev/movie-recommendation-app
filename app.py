@@ -78,7 +78,7 @@ def random():
 		R = randint(0,len(df)-1)
 		rand_movie = df.iloc[R]
 
-	return render_template('/templates/ratings.html',
+	return render_template('ratings.html',
 			name = rand_movie['original_title'],
 			genre = rand_movie['genres'],
 			ratings = rand_movie['popularity'])
