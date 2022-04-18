@@ -26,7 +26,7 @@ def similar_by_name():
 	query = result['name']
 	n = 0
 	movie_list = []
-	print('Movies with the words "{}" in the title:'.format(query))
+	print('Movies with the words333333 "{}" in the title:'.format(query))
 	for i, name in enumerate(df.original_title):
 		if query.lower() in name.lower():
 			info = {
@@ -78,7 +78,7 @@ def random():
 		R = randint(0,len(df)-1)
 		rand_movie = df.iloc[R]
 
-	return render_template('ratings.html',
+	return render_template('/templates/ratings.html',
 			name = rand_movie['original_title'],
 			genre = rand_movie['genres'],
 			ratings = rand_movie['popularity'])
