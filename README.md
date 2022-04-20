@@ -175,7 +175,7 @@ Upload to Heroku (the instructions will be listed in your Heroku app page):
     > heroku git:remote -a movie-recommender-example
     > git add .
     > git commit -am "make it better"
-    > git push heroku master
+    > git push heroku
 
 Your app should be live
 
